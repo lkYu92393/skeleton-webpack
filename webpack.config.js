@@ -1,5 +1,6 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -11,6 +12,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Skeleton Webpack',
-    })
+      filename: 'index.html',
+      template: 'src/assets/index.html'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: 'src/assets/static',
+        to: 'static'
+      }]
+  })
   ]
 };
