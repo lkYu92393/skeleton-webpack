@@ -3,7 +3,8 @@
     "copy-webpack-plugin": "^11.0.0",
     "html-webpack-plugin": "^5.5.3",
     "webpack": "^5.88.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.2.0"
   },
   "name": "skeleton-webpack",
   "description": "Serve as skeleton for webpack, using the following webpack components:\r - webpack\r - webpack-cli\r - copy-webpack-plugin\r - html-webpack-plugin",
@@ -11,7 +12,11 @@
   "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "./node_modules/webpack/bin/webpack.js"
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "run": "./node_modules/webpack/bin/webpack.js --watch",
+    "serve": "webpack serve",
+    "gbuild": "webpack",
+    "grun": "webpack --watch"
   },
   "repository": {
     "type": "git",
